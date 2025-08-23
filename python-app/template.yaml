@@ -42,7 +42,7 @@ spec:
       action: publish:github
       input:
         description: This is ${{ parameters.component_id }}
-        repoUrl: github.com?owner=ShubhamTatvamasi&repo=${{parameters.component_id}}
+        repoUrl: github.com?owner=ShubhamBackstage&repo=${{parameters.component_id}}
         protectDefaultBranch: false
         repoVisibility: public
 
