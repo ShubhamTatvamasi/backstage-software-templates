@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: shubhamtatvamasi/${{values.app_name}}:${{ '${{ env.COMMIT_ID }}' }}
+          tags: shubhamtatvamasi/${{values.app_name}}:${{ '${{ env.COMMIT_ID }}' }},shubhamtatvamasi/${{values.app_name}}:latest
     outputs:
       commit_id: ${{ '${{ env.COMMIT_ID }}' }}
 
