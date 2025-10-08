@@ -21,13 +21,17 @@ service:
 ingress:
   enabled: true
   className: "nginx"
-  annotations: {}
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
   hosts:
-    - host: ${{values.app_name}}-${{values.app_env}}.test.com
+    - host: $${{values.app_name}}.${{values.app_env}}.aws.shubhamtatvamasi.com
       paths:
         - path: /
           pathType: Prefix
-  tls: []
+  tls:
+  - hosts:
+      - ${{values.app_name}}.${{values.app_env}}.aws.shubhamtatvamasi.com
+    secretName: ${{values.app_name}}-tls
 resources:
   requests:
     cpu: 50m
