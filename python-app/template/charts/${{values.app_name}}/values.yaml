@@ -24,7 +24,7 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
   hosts:
-    - host: $${{values.app_name}}.${{values.app_env}}.aws.shubhamtatvamasi.com
+    - host: ${{values.app_name}}.${{values.app_env}}.aws.shubhamtatvamasi.com
       paths:
         - path: /
           pathType: Prefix
