@@ -35,7 +35,7 @@ Common labels
 */}}
 {{- define "python-app.labels" -}}
 helm.sh/chart: {{ include "python-app.chart" . }}
-backstage.io/kubernetes-id: backstage
+backstage.io/kubernetes-id: ${{values.app_name}}
 {{ include "python-app.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
@@ -48,7 +48,7 @@ Selector labels
 */}}
 {{- define "python-app.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "python-app.name" . }}
-backstage.io/kubernetes-id: backstage
+backstage.io/kubernetes-id: ${{values.app_name}}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 

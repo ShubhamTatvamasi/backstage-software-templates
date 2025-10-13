@@ -6,7 +6,7 @@ metadata:
   annotations:
     github.com/project-slug: ShubhamBackstage/${{values.app_name}}
     backstage.io/techdocs-ref: dir:.
-    backstage.io/kubernetes-id: backstage
+    backstage.io/kubernetes-id: ${{values.app_name}}
 spec:
   type: service
   owner: development
